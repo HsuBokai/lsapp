@@ -24,6 +24,4 @@ Route::get('/users/{id}', function ($id) {
     return 'This is the user with an id of '.$id;
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\PagesController@index');
