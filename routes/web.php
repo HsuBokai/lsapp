@@ -25,3 +25,4 @@ Route::get('/users/{id}', function ($id) {
 });
 
 Route::get('/', 'App\Http\Controllers\PagesController@index');
+Route::get('/about', 'App\Http\Controllers\PagesController@about');
