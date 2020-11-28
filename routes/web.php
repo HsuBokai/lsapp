@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,16 @@ Route::get('/users/{id}', function ($id) {
     return 'This is the user with an id of '.$id;
 });
 
-Route::get('/', 'App\Http\Controllers\PagesController@index');
-Route::get('/about', 'App\Http\Controllers\PagesController@about');
-Route::get('/services', 'App\Http\Controllers\PagesController@services');
+Route::get('/', [PagesController::class, 'index']);
+Route::get('/about', [PagesController::class, 'about']);
+Route::get('/services', [PagesController::class, 'services']);
+
+Route::group([
+	'prefix' => 'blog',
+	'as' => 'blog/',
+	], function() {
+		Route::get('/get', [PagesController::class, 'blog_get']);
+		Route::get('/new', [PagesController::class, 'blog_new']);
+		Route::post('/create', [PagesController::class, 'blog_create']);
+	}
+);
