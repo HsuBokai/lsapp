@@ -11,7 +11,14 @@
 		@yield ('content')
 	</div>
 	<div id="app">
-		@{{ message }}
+		<b-container>
+			<b-alert show variant="danger" dismissible>
+				Default alert
+			</b-alert>
+			<b-button variant="success">
+				@{{ message }}
+			</b-button>
+		</b-container>
 	</div>
 	<script src="{{mix('js/app.js')}}"></script>
     </body>
