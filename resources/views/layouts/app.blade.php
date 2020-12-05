@@ -10,5 +10,9 @@
 	<div class="container">
 		@yield ('content')
 	</div>
+	<div id="app">
+		@{{ message }}
+	</div>
+	<script src="{{mix('js/app.js')}}"></script>
     </body>
 </html>
