@@ -7,18 +7,11 @@
         <title>{{config('app.name', 'LSAPP')}}</title>
     </head>
     <body>
-	<div class="container">
-		@yield ('content')
-	</div>
 	<div id="app">
-		<b-container>
-			<b-alert show variant="danger" dismissible>
-				Default alert
-			</b-alert>
-			<b-button variant="success">
-				@{{ message }}
-			</b-button>
-		</b-container>
+		@include ('inc.navbar')
+		<div class="container">
+			@yield ('content')
+		</div>
 	</div>
 	<script src="{{mix('js/app.js')}}"></script>
     </body>
