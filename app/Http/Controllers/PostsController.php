@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BlogPost;
+//use DB;
 
 class PostsController extends Controller
 {
@@ -14,7 +15,11 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = BlogPost::all();
+        //$posts = BlogPost::all();
+        //$posts = BlogPost::where('title','A')->get();
+        //$posts = DB::select('SELECT * FROM blog_posts');
+        //$posts = BlogPost::orderBy('title', 'desc')->take(1)->get();
+        $posts = BlogPost::orderBy('title', 'asc')->paginate(1);
         return view('posts.index')->with('posts', $posts);
     }
 

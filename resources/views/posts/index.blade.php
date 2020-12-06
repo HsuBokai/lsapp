@@ -12,6 +12,7 @@
 			</div>
 			</li>
 		@endforeach
+		{{$posts->links()}}
 		</ul>
 	@else
 		<p>No posts found</p>
