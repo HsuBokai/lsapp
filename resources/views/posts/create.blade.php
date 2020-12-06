@@ -11,5 +11,6 @@
 			{{Form::label('content', 'Content')}}
 			{{Form::textarea('content', '', ['class' => 'form-control', 'placeholder' => 'Content Text'])}}
 		</div>
+		{{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
 	{!! Form::close() !!}
 @endsection
