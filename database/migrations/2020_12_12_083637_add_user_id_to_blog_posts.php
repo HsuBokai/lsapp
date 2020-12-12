@@ -14,7 +14,7 @@ class AddUserIdToBlogPosts extends Migration
     public function up()
     {
         Schema::table('blog_posts', function (Blueprint $table) {
-            //
+            $table->integer('user_id');
         });
     }
 
@@ -26,7 +26,7 @@ class AddUserIdToBlogPosts extends Migration
     public function down()
     {
         Schema::table('blog_posts', function (Blueprint $table) {
-            //
+            $table->dropColumn('user_id');
         });
     }
 }
