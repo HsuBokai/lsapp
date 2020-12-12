@@ -41,3 +41,11 @@ Route::group([
 		Route::post('/create', [PagesController::class, 'blog_create']);
 	}
 );
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
