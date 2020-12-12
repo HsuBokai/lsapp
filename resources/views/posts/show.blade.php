@@ -8,6 +8,8 @@
 		{!! $post->content !!}
 	</div>
 	<hr>
+	@if (!Auth::guest())
+	@if (Auth::user()->id == $post->user_id)
 	<b-button-group>
 		<b-button variant="primary" href="/posts/{{$post->id}}/edit">Edit</b-button>
 		{!! Form::open(['url' => '/posts/'.$post->id, 'method' => 'POST', 'class' => 'pull-right']) !!}
@@ -15,4 +17,6 @@
 			<b-button type="submit" variant="danger">Delete</b-button>
 		{!! Form::close() !!}
 	</b-button-group>
+	@endif
+	@endif
 @endsection
