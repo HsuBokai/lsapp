@@ -8,5 +8,5 @@
 		{!! $post->content !!}
 	</div>
 	<hr>
-	<a href="/posts/{{$post->id}}/edit" class="btn btn-primary">Edit</a>
+	<b-button variant="primary" href="/posts/{{$post->id}}/edit">Edit</b-button>
 @endsection

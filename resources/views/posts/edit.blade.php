@@ -12,6 +12,6 @@
 			{{Form::textarea('content', $post->content, ['class' => 'form-control', 'placeholder' => 'Content Text'])}}
 		</div>
 		{{Form::hidden('_method', 'PUT')}}
-		{{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+		<b-button type="submit" variant="primary">Submit</b-button>
 	{!! Form::close() !!}
 @endsection
